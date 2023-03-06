@@ -1,6 +1,8 @@
-import { Menu,Search } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
 import React from 'react';
+
+import './App.css';
 
 import firebase from './utils/firebase';
 
@@ -11,33 +13,31 @@ function Header(){
             setUser(currentUser);
         });
     },[]);
-    return <Menu color={"green"}>
+    return <Menu style={{
+        backgroundColor: "#F7F1E5"
+      }}>
         <Menu.Item as={Link} to="/" >
-            分你所析
-        </Menu.Item>
-        <Menu.Item  color="green"/>
-        <Menu.Item >
-            <Search />
+            <p className="topic">分你所析</p>
         </Menu.Item>
         <Menu.Menu position='right'>
             {user ? (
             <>
                 <Menu.Item Link to href="https://9maple.org/video/37494-1-236.html">
-                聯絡我們
+                <p className="topic">聯絡我們</p>
                 </Menu.Item>
                 <Menu.Item as={Link} to="/analyze">
-                產品分析
+                <p className="topic">產品分析</p>
                 </Menu.Item>
                 <Menu.Item as={Link} to="/my">
-                會員
+                <p className="topic">會員</p>
                 </Menu.Item>
                 <Menu.Item onClick={() => firebase.auth().signOut()}>
-                登出
+                <p className="topic">登出</p>
                 </Menu.Item>
             </>
             ) : (
                 <Menu.Item as={Link} to="/signin">
-                註冊/登入
+                <p className="topic">註冊/登入</p>
                 </Menu.Item>
             )}
         </Menu.Menu>

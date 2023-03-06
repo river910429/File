@@ -1,5 +1,5 @@
 import React from "react";
-import {Container,Form, Header} from "semantic-ui-react";
+import { Container,Form, Header } from "semantic-ui-react";
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,15 +20,21 @@ function Analyze(){
     }
     //日期
 
+    const [loading,setLoading] = useState(false);
+
     function onSubmit(){
         navigate('/analyzeResult');
     }
     function ReturnToBackend(){
         console.log(webname);
     }
+    function Loadi(){
+        setLoading(true);
+    }
     function mix(){
         onSubmit();
         ReturnToBackend();
+        Loadi();
     }
     return (
         <Container>

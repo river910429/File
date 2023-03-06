@@ -7,7 +7,7 @@ import Analyze from './pages/Analyze';
 import Member from './pages/Member';
 import AnalyzeResult from './pages/AnalyzeResult';
 import Handsome from './pages/Handsome';
-import PostNavigate from './pages/PostNavigate';
+import PostNavigate from './pages/KeySearch';
 
 function App(){
     return(

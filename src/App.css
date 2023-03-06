@@ -1,0 +1,41 @@
+.root{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Shantell Sans', cursive;
+    font-weight:bold; 
+    font-size: 18px;
+    margin-top: 10%;
+}
+@font-face {
+    font-family: jk;
+    src: url(../public/jf-openhuninn-1.1.ttf);
+}
+
+@font-face {
+    font-family: han;
+    src: url(../public/SourceHanSerifTC-Bold.otf);
+}
+
+.topic{
+    font-family: han;
+    font-size: 20px;
+}
+
+.han{
+    font-family: han;
+    font-size: 25px;
+}
+.han2{
+    font-family: han;
+    font-size: 15px;
+}
+.han3{
+    font-family: han;
+    font-size: 20px;
+}
+.loading{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}

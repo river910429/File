@@ -1,14 +1,16 @@
-import { Grid, Search ,Container } from 'semantic-ui-react';
+import { Grid ,Container } from 'semantic-ui-react';
 import Topics from '../component/Topics';
 import { useLocation } from 'react-router-dom';
 import Record from "./Record";
+import KeySearch from './KeySearch';
+import '../App.css';
 
 function Posts(){
     const location = useLocation();
     const urlSearchParams = new URLSearchParams(location.search);
     const currentDetail = urlSearchParams.get("detail");
     if(currentDetail){
-        if(currentDetail == "歷史紀錄") return(<Record/>);
+        if(currentDetail === "歷史紀錄") return(<Record/>);
         else return(
             <Container>
                 <Grid>
@@ -31,7 +33,9 @@ function Posts(){
                         <Grid.Column width={3}>
                             <Topics/>
                         </Grid.Column>
-                        <Grid.Column width={10}>This is 首頁</Grid.Column>
+                        <Grid.Column width={10}>
+                            <KeySearch />
+                        </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>
                     </Grid.Row>
                 </Grid>
