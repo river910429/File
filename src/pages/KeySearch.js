@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import { Grid , Container, Form} from 'semantic-ui-react';
-
+import { useNavigate, createSearchParams } from 'react-router-dom'
+import { Container, Form} from 'semantic-ui-react';
 import Introduce from './Introduce';
 
 function KeySearch() {
+  const [loading, setLoading] = React.useState(false);
+    useEffect(() =>{
+        setLoading(true);
+        setTimeout(() =>{
+            setLoading(false);
+        },1000);
+    },[]);
   const [key ,setKey] = React.useState('');
   const navigate = useNavigate();
-
-  function sendToPage(){
-    navigate('/analyzeResult');
-  }
+  
+  const SendToPage = (id) => {
+    navigate({
+        pathname:'/analyzeResult',
+        search:createSearchParams({
+            id:key
+        }).toString()
+    });
+};
 
   function onSubmit(){
-    console.log(key);
-    keySend = key;
-    sendToPage();
+    SendToPage();
   }
   return (
     <Container>

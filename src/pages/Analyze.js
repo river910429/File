@@ -1,7 +1,9 @@
 import React from "react";
 import { Container,Form, Header } from "semantic-ui-react";
 import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate } from 'react-router-dom';
+
+
 
 function Analyze(){
     const navigate = useNavigate();
@@ -20,26 +22,27 @@ function Analyze(){
     }
     //日期
 
-    const [loading,setLoading] = useState(false);
+
+    const SendToPage = (id) => {
+        navigate({
+            pathname:'/analyzeResult',
+            search:createSearchParams({
+                id:key
+            }).toString()
+        });
+    };
 
     function onSubmit(){
         navigate('/analyzeResult');
     }
-    function ReturnToBackend(){
-        console.log(webname);
-    }
-    function Loadi(){
-        setLoading(true);
-    }
     function mix(){
         onSubmit();
-        ReturnToBackend();
-        Loadi();
+        SendToPage();
     }
     return (
         <Container>
             <Header>分析</Header>
-            <Form onSubmit={mix}>
+            <Form onSubmit={SendToPage}>
                 <Form.Dropdown 
                     width = {3}
                     placeholder="分析的網站"
@@ -74,14 +77,13 @@ function Analyze(){
                     onChange={handleChange1}
                     ref={dateInputRef1}
                 />
-                <p>Selected Date: {startdate}</p>
                 <Header>結束日期</Header>
                 <input
                     type="date"
                     onChange={handleChange2}
                     ref={dateInputRef2}
                 />
-                <p>Selected Date: {enddate}</p>
+                <br /><br />
                 <Form.Button>開始分析</Form.Button>
             </Form>
         </Container>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Menu, Form, Container, Message} from 'semantic-ui-react';
+import {Menu, Form, Container, Message, Header} from 'semantic-ui-react';
 import firebase from '../utils/firebase';
 import {useNavigate} from 'react-router-dom';
 import "firebase/compat/auth";
@@ -63,6 +63,7 @@ function Signin(){
 
     return (
         <Container>
+            <Header>歡迎來到分你所析，請登入以使用更多功能</Header>
             <Menu widths="2">
                 <Menu.Item
                     active={activeItem === 'register'}
@@ -71,7 +72,7 @@ function Signin(){
                         setActiveItem("register");
                     }}
                 >
-                    註冊
+                    <p className='hand'>註冊</p>
                 </Menu.Item>
                 <Menu.Item
                     active={activeItem === 'signin'}
@@ -80,18 +81,18 @@ function Signin(){
                         setActiveItem("signin");
                     }}
                 >
-                    登入
+                    <p className='hand'>登入</p>
                 </Menu.Item>
             </Menu>
             <Form onSubmit={onSubmit}>
                 <Form.Input
-                    label='信箱'
+                    label= {<p className='hand'>信箱</p>}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder='請輸入信箱' 
+                    placeholder='請輸入信箱'
                 />
                 <Form.Input
-                    label='密碼'
+                    label={<p className='hand'>密碼</p>}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder='請輸入密碼'
@@ -99,8 +100,8 @@ function Signin(){
                 />
                 {errorMessage && <Message negative>{errorMessage}</Message>}
                 <Form.Button loading={isLoading}>
-                    {activeItem === 'register' && '註冊'}
-                    {activeItem === 'signin' && '登入'}
+                    {activeItem === 'register' && <p className='hand'>註冊</p>}
+                    {activeItem === 'signin' && <p className='hand'>登入</p>}
                 </Form.Button>
             </Form>
         </Container>

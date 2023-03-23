@@ -1,6 +1,7 @@
 import { Grid ,Item ,Container } from 'semantic-ui-react';
-import { BrowserRouter,Routes,Route, Navigate ,Link } from 'react-router-dom';
+import { Routes,Route} from 'react-router-dom';
 import MyMenu from "../component/MyMenu";
+import MySettings from './MySettings';
 
 function Member(){
     return (
@@ -11,21 +12,11 @@ function Member(){
                         <MyMenu />
                     </Grid.Column>
                     <Grid.Column width={10}>
-                    {/*
-                    
-                    <BrowserRouter>
                         <Routes>
-                            <Route 
-                                path='/my/history'
-                                element={"歷史分析"}
-                            ></Route>
-                            <Route 
-                                path='/my/settings'
-                                element={"會員設定"}
-                            ></Route>
+                            <Route path="*" element={<p className='han'>進來ㄌ 進來ㄌ 歡裡進來ㄌ</p>} exact/>
+                            <Route path="/history" element={"歷史分析"} exact/>
+                            <Route path="/settings" element={<MySettings />} exact/>
                         </Routes>
-                    </BrowserRouter>
-                    */}
                     </Grid.Column>
                     <Grid.Column width={3}></Grid.Column>
                 </Grid.Row>

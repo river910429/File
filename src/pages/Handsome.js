@@ -1,5 +1,12 @@
 function Handsome(){
-    return <h1>我好率</h1>;
+    return (
+        <div>
+            <br></br><br></br><br></br>
+        <p className='han3'>
+                可能刪掉ㄅ
+        </p>
+        </div>
+        );
 }
 
 export default Handsome;

@@ -11,26 +11,42 @@
 }
 
 @font-face {
-    font-family: han;
+    font-family: han-bold;
     src: url(../public/SourceHanSerifTC-Bold.otf);
+}
+@font-face {
+    font-family: han-semiBold;
+    src: url(../public/SourceHanSerifTC-SemiBold.otf);
+}
+@font-face {
+    font-family: han-Med;
+    src: url(../public/SourceHanSerifTC-Medium.otf);
 }
 
 .topic{
-    font-family: han;
+    font-family: han-Med;
     font-size: 20px;
 }
 
+.hand{
+    font-family: han-bold;
+}
+
 .han{
-    font-family: han;
+    font-family: han-bold;
     font-size: 25px;
 }
 .han2{
-    font-family: han;
+    font-family: han-bold;
     font-size: 15px;
 }
 .han3{
-    font-family: han;
+    font-family: han-bold;
     font-size: 20px;
+}
+.han4{
+    font-family: han-bold;
+    font-size: 16px;
 }
 .loading{
     text-align:center;

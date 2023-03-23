@@ -1,17 +1,17 @@
 import React from 'react';
 import { List } from 'semantic-ui-react';
-import { Link ,useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 function MyMenu(){
     const location = useLocation();
     const menuItem = [
         {
-            name:'歷史分析',
+            name:<p className='han2'>歷史分析</p>,
             path:'/my/history'
         },
         {
-            name:'會員資料',
+            name:<p className='han2'>會員資料</p>,
             path:'/my/settings'
         }
     ];

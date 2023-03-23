@@ -28,7 +28,7 @@ function Header(){
                 <Menu.Item as={Link} to="/analyze">
                 <p className="topic">產品分析</p>
                 </Menu.Item>
-                <Menu.Item as={Link} to="/my">
+                <Menu.Item as={Link} to="/my/*">
                 <p className="topic">會員</p>
                 </Menu.Item>
                 <Menu.Item onClick={() => firebase.auth().signOut()}>
